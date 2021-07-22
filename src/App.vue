@@ -3,7 +3,7 @@
     <div class="row">
       <!-- header -->
       <div class="col">
-        <header class="col mx-5 py-2">
+        <header class="col mx-4 py-2">
           <!-- logo -->
           <svg fill="currentColor" class="logo" viewBox="0 0 24 24">
             <path
@@ -128,7 +128,7 @@
 
       <!-- tweets -->
       <div class="col-6">
-        <main class="mx-2 px-4 py-2">
+        <main class="mx-1 px-4 py-2">
           <section class="border-start border-end">
             <!-- home bar -->
 
@@ -467,92 +467,160 @@ What's happening?</textarea
 
           <!-- who to follow -->
 
-          <section class="who-to-follow">
-            <h5>Who to follow</h5>
-            <a href="#">
-              <div class="suggested-follow">
-                <div class="photo-tweet">
-                  <img
-                    class="img-fluid"
-                    src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YmxvZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  />
+          <section class="bg-light px-4 py-1 rounded my-2">
+            <h5 class="fw-bold text-capitalize fs-5 border-bottom py-3">
+              Who to follow
+            </h5>
+            <div class="border-bottom py-3">
+              <a href="#">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <img
+                      class="img-fluid rounded-circle"
+                      src="https://pbs.twimg.com/profile_images/1358878150000857096/nzevXiro_normal.jpg"
+                    />
+                  </div>
+                  <div>
+                    <a class="fw-bold text-dark d-flex" href="#"
+                      >Haytham Salama</a
+                    >
+                    <span class="text-muted fs-samll">@HaythamAsalama</span>
+                  </div>
+                  <div>
+                    <button class="btn btn-outline-primary fw-bold">
+                      Follow
+                    </button>
+                  </div>
                 </div>
-                <div class="username">
-                  <a href="#">Haytham Salama</a>
-                  <span>@HaythamAsalama</span>
-                  <button>Follow</button>
+              </a>
+            </div>
+            <div class="border-bottom py-3">
+              <a href="#">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <img
+                      class="img-fluid rounded-circle"
+                      src="https://pbs.twimg.com/profile_images/1358878150000857096/nzevXiro_normal.jpg"
+                    />
+                  </div>
+                  <div>
+                    <a class="fw-bold text-dark d-flex" href="#"
+                      >Haytham Salama</a
+                    >
+                    <span class="text-muted fs-samll">@HaythamAsalama</span>
+                  </div>
+                  <div>
+                    <button class="btn btn-outline-primary fw-bold">
+                      Follow
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </a>
-            <a href="#">
-              <div class="suggested-follow">
-                <div class="photo-tweet">
-                  <img
-                    class="img-fluid"
-                    src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YmxvZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  />
-                </div>
-                <div class="username">
-                  <a href="#">Haytham Salama</a>
-                  <span>@HaythamAsalama</span>
-                  <button>Follow</button>
-                </div>
-              </div>
-            </a>
-
-            <div class="show-more">
-              <a href="#">show more</a>
+              </a>
+            </div>
+            <div class="py-3">
+              <a href="#" class="text-primary text-left"> Show more </a>
             </div>
           </section>
 
           <!-- topics to follow -->
 
-          <section class="topics-to-follow">
-            <h5>Topics to follow</h5>
-            <a href="#">
-              <div class="topics-follow">
-                <div class="topic-name">
-                  <span>Chemistry</span>
-                  <span>Science</span>
-                  <button>Follow</button>
+          <section class="bg-light px-4 py-1 rounded my-2">
+            <h5 class="fw-bold text-capitalize fs-5 border-bottom py-3">
+              Topics to follow
+            </h5>
+            <div class="border-bottom py-3">
+              <a href="#">
+                <div class="d-flex justify-content-between">
+                  <div class="flex flex-column">
+                    <span class="fw-bold text-dark d-flex">Chemistry</span>
+                    <span class="text-muted">Science</span>
+                  </div>
+                  <div>
+                    <button class="btn btn-outline-primary fw-bold">
+                      Follow
+                    </button>
+                  </div>
+                  <div>
+                    <svg
+                      width="20px"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </div>
                 </div>
-                <svg
-                  width="20px"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </div>
-            </a>
-            <a href="#">
-              <div class="topics-follow">
-                <div class="topic-name">
-                  <span>Chemistry</span>
-                  <span>Science</span>
-                  <button>Follow</button>
+              </a>
+            </div>
+            <div class="border-bottom py-3">
+              <a href="#">
+                <div class="d-flex justify-content-between">
+                  <div class="flex flex-column">
+                    <span class="fw-bold text-dark d-flex">Chemistry</span>
+                    <span class="text-muted">Science</span>
+                  </div>
+                  <div>
+                    <button class="btn btn-outline-primary fw-bold">
+                      Follow
+                    </button>
+                  </div>
+                  <div>
+                    <svg
+                      width="20px"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </div>
                 </div>
-                <svg
-                  width="20px"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </div>
-            </a>
+              </a>
+            </div>
+            <div class="border-bottom py-3">
+              <a href="#">
+                <div class="d-flex justify-content-between">
+                  <div class="flex flex-column">
+                    <span class="fw-bold text-dark d-flex">Chemistry</span>
+                    <span class="text-muted">Science</span>
+                  </div>
+                  <div>
+                    <button class="btn btn-outline-primary fw-bold">
+                      Follow
+                    </button>
+                  </div>
+                  <div>
+                    <svg
+                      width="20px"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="py-3">
+              <a href="#" class="text-primary text-left"> Show more </a>
+            </div>
           </section>
         </section>
       </div>
