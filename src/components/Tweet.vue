@@ -29,7 +29,7 @@
 			<div class="w-100">
 				<p class="text-break px-2 my-2">Two releases today: - 3.1.5 (stable) - bug fixes (specifically script setup features) - 3.2.0-beta.1 - tons of features / perf improvements which we will dive into in a blog post when it hits stable. If you are curious, check out the changelog:</p>
 				<div class="m-4 mb-1 border rounded border">
-					<img class="img-fluid rounded-top" src="https://pbs.twimg.com/card_img/1418017558255620099/fWA9Z5DD?format=jpg&amp;name=small" />
+					<img class="img-fluid rounded-top" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
 					<p class="p-3">The Alabama Securities Commission asked BlockFi to show why it should not be required stop selling unregistered securities in the state.</p>
 				</div>
 				<div class="mx-4 d-flex flex-row justify-content-around">
@@ -74,9 +74,6 @@
 
 <script>
 	export default {
-		name: 'Tweet',
-		props: {
-			msg: String,
-		},
+		name: "Tweet",
 	};
 </script>

@@ -19,3 +19,15 @@
 		</section>
 	</main>
 </template>
+<script>
+	import NewTweet from "@/components/NewTweet.vue";
+	import Tweet from "@/components/Tweet.vue";
+
+	export default {
+		name: "Tweets",
+		components: {
+			NewTweet,
+			Tweet,
+		},
+	};
+</script>

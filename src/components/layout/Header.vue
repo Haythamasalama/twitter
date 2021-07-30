@@ -93,3 +93,8 @@
 		<button class="btn btn-primary my-4 text-white py-2 fw-bold shadow w-100">Tweet</button>
 	</header>
 </template>
+<script>
+	export default {
+		name: "Header",
+	};
+</script>

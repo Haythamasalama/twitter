@@ -8,3 +8,8 @@
 		<input type="search" class="form-control border-0" placeholder="Search Twitter" />
 	</div>
 </template>
+<script>
+	export default {
+		name: 'SearchBox',
+	};
+</script>

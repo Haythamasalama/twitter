@@ -38,3 +38,8 @@
 		</div>
 	</section>
 </template>
+<script>
+	export default {
+		name: 'WhoToFollow',
+	};
+</script>

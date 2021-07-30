@@ -51,8 +51,5 @@
 <script>
 	export default {
 		name: 'NewTweet',
-		props: {
-			msg: String,
-		},
 	};
 </script>

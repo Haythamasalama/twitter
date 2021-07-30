@@ -60,3 +60,8 @@
 		</div>
 	</section>
 </template>
+<script>
+	export default {
+		name: 'TopicsToFollow',
+	};
+</script>

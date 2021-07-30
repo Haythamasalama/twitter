@@ -30,3 +30,8 @@
 		</div>
 	</section>
 </template>
+<script>
+	export default {
+		name: 'TrandsTweet',
+	};
+</script>
