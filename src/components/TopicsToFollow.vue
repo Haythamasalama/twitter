@@ -1,67 +1,67 @@
 <template>
-	<section class="bg-light px-4 py-1 rounded my-2">
-		<h5 class="fw-bold text-capitalize fs-5 border-bottom py-3">Topics to follow</h5>
-		<div class="border-bottom py-3">
+	<section class="bg-secondary py-1 rounded-lg my-2">
+		<h5 class="font-bold capitalize text-xl border-b py-3 px-4">Topics to follow</h5>
+		<div class="border-b py-3 hover:bg-gray-100 px-4">
 			<a href="#">
-				<div class="d-flex justify-content-between">
-					<div class="flex flex-column">
-						<span class="fw-bold text-dark d-flex">Chemistry</span>
-						<span class="text-muted">Science</span>
+				<div class="flex justify-between">
+					<div class="flex flex-col">
+						<span class="font-bold text-black flex">Chemistry</span>
+						<span class="text-info">Science</span>
 					</div>
 					<div>
-						<button class="btn btn-outline-primary fw-bold">Follow</button>
+						<button class="border-primary border rounded-full px-3 py-1 text-primary font-bold">Follow</button>
 					</div>
 					<div>
-						<svg width="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<svg class="text-info w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</div>
 				</div>
 			</a>
 		</div>
-		<div class="border-bottom py-3">
+		<div class="border-b py-3 hover:bg-gray-100 px-4">
 			<a href="#">
-				<div class="d-flex justify-content-between">
-					<div class="flex flex-column">
-						<span class="fw-bold text-dark d-flex">Chemistry</span>
-						<span class="text-muted">Science</span>
+				<div class="flex justify-between">
+					<div class="flex flex-col">
+						<span class="font-bold text-black flex">Chemistry</span>
+						<span class="text-info">Science</span>
 					</div>
 					<div>
-						<button class="btn btn-outline-primary fw-bold">Follow</button>
+						<button class="border-primary border rounded-full px-3 py-1 text-primary font-bold">Follow</button>
 					</div>
 					<div>
-						<svg width="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<svg class="text-info w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</div>
 				</div>
 			</a>
 		</div>
-		<div class="border-bottom py-3">
+		<div class="border-b py-3 hover:bg-gray-100 px-4">
 			<a href="#">
-				<div class="d-flex justify-content-between">
-					<div class="flex flex-column">
-						<span class="fw-bold text-dark d-flex">Chemistry</span>
-						<span class="text-muted">Science</span>
+				<div class="flex justify-between">
+					<div class="flex flex-col">
+						<span class="font-bold text-black flex">Chemistry</span>
+						<span class="text-info">Science</span>
 					</div>
 					<div>
-						<button class="btn btn-outline-primary fw-bold">Follow</button>
+						<button class="border-primary border rounded-full px-3 py-1 text-primary font-bold">Follow</button>
 					</div>
 					<div>
-						<svg width="20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<svg class="text-info w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</div>
 				</div>
 			</a>
 		</div>
-		<div class="py-3">
+		<div class="py-3 px-4">
 			<a href="#" class="text-primary text-left"> Show more </a>
 		</div>
 	</section>
 </template>
 <script>
 	export default {
-		name: 'TopicsToFollow',
+		name: "TopicsToFollow",
 	};
 </script>

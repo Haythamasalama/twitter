@@ -1,17 +1,19 @@
 <template>
-	<!-- header -->
-	<div class="col">
-		<Header />
-	</div>
+	<div class="flex">
+		<!-- header -->
+		<div class="w-1/4 pl-8">
+			<Header />
+		</div>
 
-	<!-- header -->
-	<div class="col-6">
-		<Tweets />
-	</div>
+		<!-- header -->
+		<div class="w-2/4">
+			<Tweets />
+		</div>
 
-	<!-- header -->
-	<div class="col">
-		<Sidebar />
+		<!-- header -->
+		<div class="w-1/4">
+			<Sidebar />
+		</div>
 	</div>
 </template>
 
