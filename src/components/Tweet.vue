@@ -1,41 +1,33 @@
 <template>
-	<article class="grid grid-cols-8 gap-1 p-4 border-b hover:bg-gray-50">
+	<article class="grid grid-cols-8 gap-1 p-4 border-b hover:bg-gray-50" v-for="twett in twetts" :key="twett.id">
 		<!-- img profile -->
 		<div>
-			<img class="rounded-full" src="https://pbs.twimg.com/profile_images/1273411415215411202/9HeiHTVY_normal.jpg" />
+			<img class="rounded-full" :alt="twett.user.name" :src="twett.user.image" />
 		</div>
 
 		<div class="col-span-7">
 			<!-- user data  -->
 			<div class="flex justify-between">
 				<div class="flex">
-					<span class="font-bold">CoinMarketCap</span>
-					<svg viewBox="0 0 24 24" fill="currentColor" class="text-primary mx-1 w-5">
-						<g>
-							<path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"></path>
-						</g>
-					</svg>
-					<span class="mx-1">@CoinMarketCap</span>
-					<span class="mx-2">4h</span>
+					<span class="font-bold">{{ twett.user.name }}</span>
+					<svg v-if="twett.user.verified" viewBox="0 0 24 24" fill="currentColor" class="text-primary mx-1 w-5"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25a3.606 3.606 0 00-1.336-.25c-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5a.749.749 0 01-1.041.208l-.115-.094-2.415-2.415a.749.749 0 111.06-1.06l1.77 1.767 3.825-5.74a.75.75 0 011.25.833z" /></svg>
+					<span class="mx-1">{{ twett.user.username }}</span>
+					<span class="mx-2">{{ twett.time }}</span>
 				</div>
 				<div>
 					<svg viewBox="0 0 24 24" stroke="currentColor" class="text-info w-7 hover:bg-primary-300 hover:text-primary rounded-full p-1 mx-1">
-						<g>
-							<circle cx="5" cy="12" r="2"></circle>
-							<circle cx="12" cy="12" r="2"></circle>
-							<circle cx="19" cy="12" r="2"></circle>
-						</g>
+						<circle cx="5" cy="12" r="2" />
+						<circle cx="12" cy="12" r="2" />
+						<circle cx="19" cy="12" r="2" />
 					</svg>
 				</div>
 			</div>
 
-			<!-- contant tweet -->
+			<!-- tweet -->
 			<div class="w-100">
-				<p class="text-break px-2 my-2">Two releases today: - 3.1.5 (stable) - bug fixes (specifically script setup features) - 3.2.0-beta.1 - tons of features / perf improvements which we will dive into in a blog post when it hits stable. If you are curious, check out the changelog:</p>
-				<div class="m-4 mb-1 border rounded-lg">
-					<img class="rounded-lg" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
-					<p class="p-3">The Alabama Securities Commission asked BlockFi to show why it should not be required stop selling unregistered securities in the state.</p>
-				</div>
+				<!-- contant tweet -->
+				<p v-html="twett.content"></p>
+				<!-- actions tweet -->
 				<div class="mx-4 p-2 flex flex-row justify-between">
 					<div class="flex justify-items-center">
 						<div class="mr-2">
@@ -46,7 +38,7 @@
 							</svg>
 						</div>
 						<div>
-							<span class="mx-1 text-info">16</span>
+							<span class="mx-1 text-info">{{ twett.actions.like }}</span>
 						</div>
 					</div>
 					<div class="flex justify-items-center">
@@ -58,7 +50,7 @@
 							</svg>
 						</div>
 						<div>
-							<span class="mx-1 text-info">16</span>
+							<span class="mx-1 text-info">{{ twett.actions.retweets }}</span>
 						</div>
 					</div>
 					<div class="flex justify-items-center">
@@ -70,7 +62,7 @@
 							</svg>
 						</div>
 						<div>
-							<span class="mx-1 text-info">5</span>
+							<span class="mx-1 text-info">{{ twett.actions.comments }}</span>
 						</div>
 					</div>
 					<div class="flex justify-items-center">
@@ -83,7 +75,7 @@
 							</svg>
 						</div>
 						<div>
-							<span class="mx-1 text-info">16</span>
+							<span class="mx-1 text-info">{{ twett.actions.share }}</span>
 						</div>
 					</div>
 				</div>
@@ -95,5 +87,76 @@
 <script>
 	export default {
 		name: "Tweet",
+		data() {
+			return {
+				twetts: [
+					{
+						id: 1,
+						user: {
+							name: "coinemarkCamp",
+							username: "@CoinMarketCap",
+							verified: true,
+							image: "https://pbs.twimg.com/profile_images/1273411415215411202/9HeiHTVY_normal.jpg",
+						},
+						content: `
+						<p class="text-break px-2 my-2">Two releases today: - 3.1.5 (stable) - bug fixes (specifically script setup features) - 3.2.0-beta.1 - tons of features / perf improvements which we will dive into in a blog post when it hits stable. If you are curious, check out the changelog:</p>
+						<div class="m-4 mb-1 border rounded-lg">
+							<img class="rounded-lg" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
+							<p class="p-3">The Alabama Securities Commission asked BlockFi to show why it should not be required stop selling unregistered securities in the state.</p>
+						</div>
+						`,
+						time: "7m",
+						actions: {
+							like: 16,
+							retweets: 10,
+							comments: 5,
+							share: 3,
+						},
+					},
+					{
+						id: 2,
+						user: {
+							name: "FOR9A",
+							username: "@FOR9A",
+							verified: false,
+							image: "https://lh3.googleusercontent.com/a-/AOh14GjD0ckLzOrzfqdv4nu6ULLuTIg_47DYe2-jp_VS=s40",
+						},
+						content: `
+						<p class="text-break px-2 my-2">تقدّم مبادرة EIT Food وبالتعاون مع Future Learn وبتمويل من المعهد الأوروبي للابتكار والتكنولوجيا، دورات مجانية عبر الإنترنت في مجالات الغذاء والتغذية المختلفة.</p>
+						<div class="m-4 mb-1 border rounded-lg">
+							<img class="rounded-lg" src="https://ci5.googleusercontent.com/proxy/NhgqX4tkUw4XhMJiMsKXQTufcs2EbiX3GNmCcLmGn-Thk_59oZ63MA9x-otliM-Qy8dvyg7PEusZqi02OxvR0He6UTnj52mi92ld7TdtRGJIswxYrtN3R5L0i63vyyQIR0OebsliGJu7CRfAk9ee5PGMlcjTJrQa_2NAxQwQsPFnr2dKFmcJu5HJYX4IKHbxB8CyeyklcS8r-DmVLF_huXPfpuEnxlMYpE6sNeIgX8k4uCy7Qo6KLf7JZRzlS2KUf2S6i60FdqVBx1hoL0R_VmlSIfW1n5jQsSQzglfT6EXBND5fQTH1hyap3akG6by0RBiZCBmElNtO8hD8_4kAUZ4b_QoqDY52fPgpTTglsdMD__lxVFsxOzjS2dNrAMsd7kXQjLHDD66c026N=s0-d-e1-ft#https://d3vt78ic2w6yaz.cloudfront.net/max-600/bulkEmail/64930-%D8%AF%D9%88%D8%B1%D8%A7%D8%AA-%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9-%D8%B9%D8%A8%D8%B1-%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%D9%81%D9%8A-%D9%85%D8%AC%D8%A7%D9%84-%D8%A7%D9%84%D8%BA%D8%B0%D8%A7%D8%A1-01.webp" />
+							<p class="p-3">لا تفوّت فرصة التسجيل ومشاركة الدورات مع أصدقائك!</p>
+						</div>
+						`,
+						time: "4h",
+						actions: {
+							like: 150,
+							retweets: 14,
+							comments: 50,
+							share: 15,
+						},
+					},
+					{
+						id: 3,
+						user: {
+							name: "Haytham Salama",
+							username: "@HaythamAslaama",
+							verified: true,
+							image: "https://pbs.twimg.com/profile_images/1358878150000857096/nzevXiro_normal.jpg",
+						},
+						content: `
+						<p class="text-break px-2 my-2">This the first tweet in twitter</p>
+						`,
+						time: "2d",
+						actions: {
+							like: 1006,
+							retweets: null,
+							comments: null,
+							share: null,
+						},
+					},
+				],
+			};
+		},
 	};
 </script>
