@@ -1,7 +1,7 @@
 <template>
 	<section class="flex border-b-8 px-3 py-3">
 		<div class="mx-2">
-			<img class="rounded-full" src="https://pbs.twimg.com/profile_images/1358878150000857096/nzevXiro_normal.jpg" />
+			<img class="rounded-full" alt="HaythamASalama" src="https://pbs.twimg.com/profile_images/1358878150000857096/nzevXiro_normal.jpg" />
 		</div>
 
 		<div class="flex flex-col w-full">

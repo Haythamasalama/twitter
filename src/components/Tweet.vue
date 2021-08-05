@@ -101,7 +101,7 @@
 						content: `
 						<p class="text-break px-2 my-2">Two releases today: - 3.1.5 (stable) - bug fixes (specifically script setup features) - 3.2.0-beta.1 - tons of features / perf improvements which we will dive into in a blog post when it hits stable. If you are curious, check out the changelog:</p>
 						<div class="m-4 mb-1 border rounded-lg">
-							<img class="rounded-lg" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
+							<img class="rounded-lg" alt="coinemarkCamp" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
 							<p class="p-3">The Alabama Securities Commission asked BlockFi to show why it should not be required stop selling unregistered securities in the state.</p>
 						</div>
 						`,
@@ -116,16 +116,15 @@
 					{
 						id: 2,
 						user: {
-							name: "FOR9A",
-							username: "@FOR9A",
+							name: "Elon Musk",
+							username: "@elonmusk",
 							verified: false,
-							image: "https://lh3.googleusercontent.com/a-/AOh14GjD0ckLzOrzfqdv4nu6ULLuTIg_47DYe2-jp_VS=s40",
+							image: "https://pbs.twimg.com/profile_images/1416443682157473795/dGtFbtht_normal.jpg",
 						},
 						content: `
-						<p class="text-break px-2 my-2">تقدّم مبادرة EIT Food وبالتعاون مع Future Learn وبتمويل من المعهد الأوروبي للابتكار والتكنولوجيا، دورات مجانية عبر الإنترنت في مجالات الغذاء والتغذية المختلفة.</p>
+						<p class="text-break px-2 my-2">Aiming to stack ship on booster today</p>
 						<div class="m-4 mb-1 border rounded-lg">
-							<img class="rounded-lg" src="https://ci5.googleusercontent.com/proxy/NhgqX4tkUw4XhMJiMsKXQTufcs2EbiX3GNmCcLmGn-Thk_59oZ63MA9x-otliM-Qy8dvyg7PEusZqi02OxvR0He6UTnj52mi92ld7TdtRGJIswxYrtN3R5L0i63vyyQIR0OebsliGJu7CRfAk9ee5PGMlcjTJrQa_2NAxQwQsPFnr2dKFmcJu5HJYX4IKHbxB8CyeyklcS8r-DmVLF_huXPfpuEnxlMYpE6sNeIgX8k4uCy7Qo6KLf7JZRzlS2KUf2S6i60FdqVBx1hoL0R_VmlSIfW1n5jQsSQzglfT6EXBND5fQTH1hyap3akG6by0RBiZCBmElNtO8hD8_4kAUZ4b_QoqDY52fPgpTTglsdMD__lxVFsxOzjS2dNrAMsd7kXQjLHDD66c026N=s0-d-e1-ft#https://d3vt78ic2w6yaz.cloudfront.net/max-600/bulkEmail/64930-%D8%AF%D9%88%D8%B1%D8%A7%D8%AA-%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9-%D8%B9%D8%A8%D8%B1-%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%D9%81%D9%8A-%D9%85%D8%AC%D8%A7%D9%84-%D8%A7%D9%84%D8%BA%D8%B0%D8%A7%D8%A1-01.webp" />
-							<p class="p-3">لا تفوّت فرصة التسجيل ومشاركة الدورات مع أصدقائك!</p>
+							<img class="rounded-lg" alt="Musk" src="https://pbs.twimg.com/media/E8DErhlVUAAORur?format=jpg&name=small" />
 						</div>
 						`,
 						time: "4h",
