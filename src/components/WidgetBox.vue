@@ -1,9 +1,7 @@
 <template>
 	<section class="bg-secondary py-1 rounded-lg my-2">
 		<h5 class="font-bold capitalize text-xl border-b py-3 px-4">{{ title }}</h5>
-		<div class="border-b py-3 hover:bg-gray-100 px-4">
-			<slot></slot>
-		</div>
+		<slot></slot>
 		<div class="py-3 px-4">
 			<a :href="showMoreLink" class="text-primary text-left">show more</a>
 		</div>

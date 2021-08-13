@@ -1,18 +1,20 @@
 <template>
-	<article class="grid grid-cols-8 gap-1 p-4 border-b hover:bg-gray-50" v-for="twett in twetts" :key="twett.id">
+	<article class="grid grid-cols-8 gap-1 p-4 border-b hover:bg-gray-50">
 		<!-- img profile -->
 		<div>
-			<img class="rounded-full" :alt="twett.user.name" :src="twett.user.image" />
+			<img class="rounded-full" :alt="name" :src="userImage" />
 		</div>
 
 		<div class="col-span-7">
 			<!-- user data  -->
 			<div class="flex justify-between">
 				<div class="flex">
-					<span class="font-bold">{{ twett.user.name }}</span>
-					<svg v-if="twett.user.verified" viewBox="0 0 24 24" fill="currentColor" class="text-primary mx-1 w-5"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25a3.606 3.606 0 00-1.336-.25c-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5a.749.749 0 01-1.041.208l-.115-.094-2.415-2.415a.749.749 0 111.06-1.06l1.77 1.767 3.825-5.74a.75.75 0 011.25.833z" /></svg>
-					<span class="mx-1">{{ twett.user.username }}</span>
-					<span class="mx-2">{{ twett.time }}</span>
+					<span class="font-bold">{{ name }}</span>
+					<svg v-if="userVerified" viewBox="0 0 24 24" fill="currentColor" class="text-primary mx-1 w-5">
+						<path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25a3.606 3.606 0 00-1.336-.25c-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5a.749.749 0 01-1.041.208l-.115-.094-2.415-2.415a.749.749 0 111.06-1.06l1.77 1.767 3.825-5.74a.75.75 0 011.25.833z" />
+					</svg>
+					<span class="mx-1">{{ username }}</span>
+					<span class="mx-2">{{ time }}</span>
 				</div>
 				<div>
 					<svg viewBox="0 0 24 24" stroke="currentColor" class="text-info w-7 hover:bg-primary-300 hover:text-primary rounded-full p-1 mx-1">
@@ -26,7 +28,7 @@
 			<!-- tweet -->
 			<div class="w-100">
 				<!-- contant tweet -->
-				<p v-html="twett.content"></p>
+				<p v-html="content"></p>
 				<!-- actions tweet -->
 				<div class="mx-4 p-2 flex flex-row justify-between">
 					<div class="flex justify-items-center">
@@ -38,7 +40,7 @@
 							</svg>
 						</div>
 						<div>
-							<span class="mx-1 text-info">{{ twett.actions.like }}</span>
+							<span class="mx-1 text-info">{{ actionLike }}</span>
 						</div>
 					</div>
 					<div class="flex justify-items-center">
@@ -50,7 +52,7 @@
 							</svg>
 						</div>
 						<div>
-							<span class="mx-1 text-info">{{ twett.actions.retweets }}</span>
+							<span class="mx-1 text-info">{{ actionRetweets }}</span>
 						</div>
 					</div>
 					<div class="flex justify-items-center">
@@ -62,7 +64,7 @@
 							</svg>
 						</div>
 						<div>
-							<span class="mx-1 text-info">{{ twett.actions.comments }}</span>
+							<span class="mx-1 text-info">{{ actionComments }}</span>
 						</div>
 					</div>
 					<div class="flex justify-items-center">
@@ -75,7 +77,7 @@
 							</svg>
 						</div>
 						<div>
-							<span class="mx-1 text-info">{{ twett.actions.share }}</span>
+							<span class="mx-1 text-info">{{ actionShare }}</span>
 						</div>
 					</div>
 				</div>
@@ -87,75 +89,47 @@
 <script>
 	export default {
 		name: "Tweet",
-		data() {
-			return {
-				twetts: [
-					{
-						id: 1,
-						user: {
-							name: "coinemarkCamp",
-							username: "@CoinMarketCap",
-							verified: false,
-							image: "https://pbs.twimg.com/profile_images/1273411415215411202/9HeiHTVY_normal.jpg",
-						},
-						content: `
-						<p class="text-break px-2 my-2">Two releases today: - 3.1.5 (stable) - bug fixes (specifically script setup features) - 3.2.0-beta.1 - tons of features / perf improvements which we will dive into in a blog post when it hits stable. If you are curious, check out the changelog:</p>
-						<div class="m-4 mb-1 border rounded-lg">
-							<img class="rounded-lg" alt="coinemarkCamp" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
-							<p class="p-3">The Alabama Securities Commission asked BlockFi to show why it should not be required stop selling unregistered securities in the state.</p>
-						</div>
-						`,
-						time: "7m",
-						actions: {
-							like: 16,
-							retweets: 10,
-							comments: 5,
-							share: 3,
-						},
-					},
-					{
-						id: 2,
-						user: {
-							name: "Elon Musk",
-							username: "@elonmusk",
-							verified: true,
-							image: "https://pbs.twimg.com/profile_images/1416443682157473795/dGtFbtht_normal.jpg",
-						},
-						content: `
-						<p class="text-break px-2 my-2">Aiming to stack ship on booster today</p>
-						<div class="m-4 mb-1 border rounded-lg">
-							<img class="rounded-lg" alt="Musk" src="https://pbs.twimg.com/media/E8DErhlVUAAORur?format=jpg&name=small" />
-						</div>
-						`,
-						time: "4h",
-						actions: {
-							like: 150,
-							retweets: 14,
-							comments: 50,
-							share: 15,
-						},
-					},
-					{
-						id: 3,
-						user: {
-							name: "Haytham Salama",
-							username: "@HaythamAslaama",
-							verified: true,
-							image: "https://pbs.twimg.com/profile_images/1358878150000857096/nzevXiro_normal.jpg",
-						},
-						content: `
-						<p class="text-break px-2 my-2">This the first tweet in twitter</p>
-						`,
-						time: "2d",
-						actions: {
-							like: 1006,
-							retweets: null,
-							comments: null,
-							share: null,
-						},
-					},
-				],
-			};
+		props: {
+			name: {
+				type: String,
+				required: true,
+			},
+			username: {
+				type: String,
+				required: true,
+			},
+			userVerified: {
+				type: Boolean,
+				required: true,
+			},
+			userImage: {
+				type: String,
+				required: true,
+			},
+			time: {
+				type: String,
+				required: true,
+			},
+			content: {
+				type: String,
+				required: true,
+			},
+			actionLike: {
+				type: Number,
+				required: true,
+			},
+			actionRetweets: {
+				type: Number,
+				required: true,
+			},
+			actionComments: {
+				type: Number,
+				required: true,
+			},
+			actionShare: {
+				type: Number,
+				required: true,
+			},
 		},
 	};
 </script>

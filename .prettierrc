@@ -5,5 +5,5 @@
 	"bracketSpacing": true,
 	"jsxBracketSameLine": true,
 	"vueIndentScriptAndStyle": true,
-	"printWidth": 1000
+	"printWidth": 800
 }
