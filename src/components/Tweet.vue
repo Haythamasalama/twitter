@@ -95,7 +95,7 @@
 						user: {
 							name: "coinemarkCamp",
 							username: "@CoinMarketCap",
-							verified: true,
+							verified: false,
 							image: "https://pbs.twimg.com/profile_images/1273411415215411202/9HeiHTVY_normal.jpg",
 						},
 						content: `
@@ -118,7 +118,7 @@
 						user: {
 							name: "Elon Musk",
 							username: "@elonmusk",
-							verified: false,
+							verified: true,
 							image: "https://pbs.twimg.com/profile_images/1416443682157473795/dGtFbtht_normal.jpg",
 						},
 						content: `

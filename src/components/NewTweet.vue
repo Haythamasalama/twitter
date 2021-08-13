@@ -6,7 +6,7 @@
 
 		<div class="flex flex-col w-full">
 			<div class="mx-1 py-3">
-				<span class="border-0 text-xl text-info">What's happening?</span>
+				<span class="cursor-text text-2xl text-info w-auto outline-none" contenteditable>{{ tweet }}</span>
 			</div>
 			<div class="flex justify-between border-t pt-3 mt-3">
 				<div class="flex flex-row">
@@ -40,5 +40,11 @@
 <script>
 	export default {
 		name: "NewTweet",
+		data() {
+			return {
+				edited: false,
+				tweet: "What's happening?",
+			};
+		},
 	};
 </script>
