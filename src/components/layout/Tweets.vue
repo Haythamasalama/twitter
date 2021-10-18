@@ -24,6 +24,7 @@
 <script>
 	import NewTweet from "@/components/NewTweet.vue";
 	import Tweet from "@/components/Tweet.vue";
+	import axios from "axios";
 
 	export default {
 		name: "Tweets",
@@ -33,73 +34,35 @@
 		},
 		data() {
 			return {
-				twetts: [
-					{
-						id: 1,
-						user: {
-							name: "coinemarkCamp",
-							username: "@CoinMarketCap",
-							verified: false,
-							image: "https://pbs.twimg.com/profile_images/1273411415215411202/9HeiHTVY_normal.jpg",
-						},
-						content: `
-						<p class="text-break px-2 my-2">Two releases today: - 3.1.5 (stable) - bug fixes (specifically script setup features) - 3.2.0-beta.1 - tons of features / perf improvements which we will dive into in a blog post when it hits stable. If you are curious, check out the changelog:</p>
-						<div class="m-4 mb-1 border rounded-lg">
-							<img class="rounded-lg" alt="coinemarkCamp" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
-							<p class="p-3">The Alabama Securities Commission asked BlockFi to show why it should not be required stop selling unregistered securities in the state.</p>
-						</div>
-						`,
-						time: "7m",
-						actions: {
-							like: 16,
-							retweets: 10,
-							comments: 5,
-							share: 3,
-						},
-					},
-					{
-						id: 2,
-						user: {
-							name: "Elon Musk",
-							username: "@elonmusk",
-							verified: true,
-							image: "https://pbs.twimg.com/profile_images/1416443682157473795/dGtFbtht_normal.jpg",
-						},
-						content: `
-						<p class="text-break px-2 my-2">Aiming to stack ship on booster today</p>
-						<div class="m-4 mb-1 border rounded-lg">
-							<img class="rounded-lg" alt="Musk" src="https://pbs.twimg.com/media/E8DErhlVUAAORur?format=jpg&name=small" />
-						</div>
-						`,
-						time: "4h",
-						actions: {
-							like: 150,
-							retweets: 14,
-							comments: 50,
-							share: 15,
-						},
-					},
-					{
-						id: 3,
-						user: {
-							name: "Haytham Salama",
-							username: "@HaythamAslaama",
-							verified: true,
-							image: "https://pbs.twimg.com/profile_images/1358878150000857096/nzevXiro_normal.jpg",
-						},
-						content: `
-						<p class="text-break px-2 my-2">This the first tweet in twitter</p>
-						`,
-						time: "2d",
-						actions: {
-							like: 1006,
-							retweets: 0,
-							comments: 0,
-							share: 0,
-						},
-					},
-				],
+				teweet: null,
+				info: null,
+				twetts: null,
 			};
+		},
+		mounted() {
+			axios.get("https://vue-twitter-95986-default-rtdb.firebaseio.com/teweet.json").then((data) => {
+				const twett = [];
+				for (const id in data.data) {
+					twett.push({
+						actions: {
+							comments: data.data[id].actions.comments,
+							like: data.data[id].actions.like,
+							retweets: data.data[id].actions.retweets,
+							share: data.data[id].actions.share,
+						},
+						content: data.data[id].content,
+						id: id,
+						time: data.data[id].time,
+						user: {
+							image: data.data[id].user.image,
+							name: data.data[id].user.name,
+							username: data.data[id].user.username,
+							verified: data.data[id].user.verified,
+						},
+					});
+				}
+				this.twetts = twett;
+			});
 		},
 	};
 </script>

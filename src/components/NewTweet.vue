@@ -31,13 +31,15 @@
 						<path d="M18.9 18.7c-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-3.1-2v-3c0-.4.3-.8.8-.8.4 0 .8.3.8.8v2.2l2.4 1.5c.2.2.3.6.1 1z" />
 					</svg>
 				</div>
-				<button class="bg-primary-100 text-center text-white font-bold capitalize rounded-full px-3 py-2 hover:bg-primary-500" disabled>Tweet</button>
+				<button @click="newTeweet()" class="bg-primary-100 text-center text-white font-bold capitalize rounded-full px-3 py-2 hover:bg-primary-500" disabled>Tweet</button>
 			</div>
 		</div>
 	</section>
 </template>
 
 <script>
+	import axios from "axios";
+
 	export default {
 		name: "NewTweet",
 		data() {
@@ -45,6 +47,27 @@
 				edited: false,
 				tweet: "What's happening?",
 			};
+		},
+		methods: {
+			newTeweet() {
+				axios
+					.post("https://vue-twitter-95986-default-rtdb.firebaseio.com/teweet.json", {
+						actions: {
+							comments: 0,
+							like: 0,
+							retweets: 0,
+							share: 0,
+						},
+						content: "data.data[id].content",
+						time: 0,
+					})
+					.then(function (response) {
+						console.log(response);
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+			},
 		},
 	};
 </script>
